@@ -13,6 +13,13 @@
 		15A7F1622985263500025A29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A7F1602985263500025A29 /* Main.storyboard */; };
 		15A7F1642985263B00025A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A7F1632985263B00025A29 /* Assets.xcassets */; };
 		15A7F1672985263B00025A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A7F1652985263B00025A29 /* LaunchScreen.storyboard */; };
+		15B32F012985328400CEF926 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F002985328400CEF926 /* NumberCell.swift */; };
+		15B32F05298578EC00CEF926 /* CollectionViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F04298578EC00CEF926 /* CollectionViewHeaderView.swift */; };
+		15B32F0729857E4800CEF926 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F0629857E4800CEF926 /* UIView+Layout.swift */; };
+		15B32F09298582C000CEF926 /* CallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F08298582C000CEF926 /* CallButtonCell.swift */; };
+		15B32F0B29858DB600CEF926 /* BackspaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F0A29858DB600CEF926 /* BackspaceCell.swift */; };
+		15B32F0D29864FB800CEF926 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F0C29864FB800CEF926 /* UIDevice+Ext.swift */; };
+		15B32F142986529100CEF926 /* LettersAndNumbersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B32F132986529100CEF926 /* LettersAndNumbersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		15A7F1632985263B00025A29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15A7F1662985263B00025A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15A7F1682985263B00025A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15B32F002985328400CEF926 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		15B32F04298578EC00CEF926 /* CollectionViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderView.swift; sourceTree = "<group>"; };
+		15B32F0629857E4800CEF926 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		15B32F08298582C000CEF926 /* CallButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallButtonCell.swift; sourceTree = "<group>"; };
+		15B32F0A29858DB600CEF926 /* BackspaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceCell.swift; sourceTree = "<group>"; };
+		15B32F0C29864FB800CEF926 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
+		15B32F132986529100CEF926 /* LettersAndNumbersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersAndNumbersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,70 @@
 		15A7F1592985263500025A29 /* BlingCloud-DialPadTask */ = {
 			isa = PBXGroup;
 			children = (
-				15A7F15A2985263500025A29 /* AppDelegate.swift */,
-				15A7F15C2985263500025A29 /* SceneDelegate.swift */,
-				15A7F15E2985263500025A29 /* ViewController.swift */,
-				15A7F1602985263500025A29 /* Main.storyboard */,
-				15A7F1632985263B00025A29 /* Assets.xcassets */,
-				15A7F1652985263B00025A29 /* LaunchScreen.storyboard */,
+				15B32F122986503B00CEF926 /* Resources */,
+				15B32F112986502B00CEF926 /* Extensions */,
+				15B32F15298652AC00CEF926 /* Model */,
+				15B32F0F29864FE200CEF926 /* Controllers */,
+				15B32F0E29864FD200CEF926 /* Views */,
 				15A7F1682985263B00025A29 /* Info.plist */,
 			);
 			path = "BlingCloud-DialPadTask";
+			sourceTree = "<group>";
+		};
+		15B32F0E29864FD200CEF926 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15A7F1602985263500025A29 /* Main.storyboard */,
+				15A7F1652985263B00025A29 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		15B32F0F29864FE200CEF926 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15B32F102986500D00CEF926 /* Cells */,
+				15B32F04298578EC00CEF926 /* CollectionViewHeaderView.swift */,
+				15A7F15E2985263500025A29 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		15B32F102986500D00CEF926 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15B32F002985328400CEF926 /* NumberCell.swift */,
+				15B32F08298582C000CEF926 /* CallButtonCell.swift */,
+				15B32F0A29858DB600CEF926 /* BackspaceCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		15B32F112986502B00CEF926 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				15B32F0629857E4800CEF926 /* UIView+Layout.swift */,
+				15B32F0C29864FB800CEF926 /* UIDevice+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		15B32F122986503B00CEF926 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15A7F15A2985263500025A29 /* AppDelegate.swift */,
+				15A7F15C2985263500025A29 /* SceneDelegate.swift */,
+				15A7F1632985263B00025A29 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		15B32F15298652AC00CEF926 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15B32F132986529100CEF926 /* LettersAndNumbersModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B32F012985328400CEF926 /* NumberCell.swift in Sources */,
 				15A7F15F2985263500025A29 /* ViewController.swift in Sources */,
+				15B32F142986529100CEF926 /* LettersAndNumbersModel.swift in Sources */,
+				15B32F05298578EC00CEF926 /* CollectionViewHeaderView.swift in Sources */,
+				15B32F0B29858DB600CEF926 /* BackspaceCell.swift in Sources */,
 				15A7F15B2985263500025A29 /* AppDelegate.swift in Sources */,
+				15B32F0D29864FB800CEF926 /* UIDevice+Ext.swift in Sources */,
+				15B32F09298582C000CEF926 /* CallButtonCell.swift in Sources */,
 				15A7F15D2985263500025A29 /* SceneDelegate.swift in Sources */,
+				15B32F0729857E4800CEF926 /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

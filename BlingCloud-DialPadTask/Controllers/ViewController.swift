@@ -9,12 +9,19 @@ import UIKit
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let numbers = [
-        "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "0", "#"
-    ]
-    
-    let letters = [
-        "", "A B C", "D E F", "G H I", "J K L", "M N O", "P Q R S", "T U V", "W X Y Z", "", "+", ""
+    let model: [Model] = [
+        Model(numbers: "1", letters: ""),
+        Model(numbers: "2", letters: "A B C"),
+        Model(numbers: "3", letters: "D E F"),
+        Model(numbers: "4", letters: "G H I"),
+        Model(numbers: "5", letters: "J K L"),
+        Model(numbers: "6", letters: "M N O"),
+        Model(numbers: "7", letters: "P Q R S"),
+        Model(numbers: "8", letters: "T U V"),
+        Model(numbers: "9", letters: "W X Y Z"),
+        Model(numbers: "*", letters: ""),
+        Model(numbers: "0", letters: "+"),
+        Model(numbers: "#", letters: ""),
     ]
     
     lazy var leftRightSpacing = view.frame.width * 0.13
@@ -52,8 +59,8 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 dialedNumbersDisplayedString = String(dialedNumbersDisplayedString.dropLast())
             }
         } else {
-            let number = numbers[indexPath.item]
-            dialedNumbersDisplayedString += number
+            let model = model[indexPath.row].numbers
+            dialedNumbersDisplayedString += model
         }
         collectionView.reloadData()
     }
@@ -71,7 +78,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         if section == 1 {
             return 2
         }
-        return numbers.count
+        return model.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -87,8 +94,8 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NumberCell.identifier, for: indexPath) as! NumberCell
-        cell.numbersLabel.text = numbers[indexPath.item]
-        cell.lettersLabel.text = letters[indexPath.item]
+        cell.numbersLabel.text = model[indexPath.row].numbers
+        cell.lettersLabel.text = model[indexPath.row].letters
         return cell
     }
     
